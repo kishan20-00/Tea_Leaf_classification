@@ -4,9 +4,11 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import os
 from werkzeug.utils import secure_filename
+from flask_cors import CORS
 
 # Initialize Flask app
 app = Flask(__name__)
+CORS(app)
 
 # Load the saved model
 loaded_model = load_model('tea_disease_efficientnet_model.h5')
@@ -63,4 +65,4 @@ def predict():
 
 # Run the Flask app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

@@ -25,7 +25,7 @@ const Login = () => {
       localStorage.setItem("token", res.data.token); // Store token in local storage
 
       alert("Login Successful!");
-      navigate("/"); // Redirect to home page
+      navigate("/home"); // Redirect to home page
     } catch (err) {
       alert("Invalid Credentials");
     }
